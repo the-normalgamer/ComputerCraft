@@ -1,11 +1,9 @@
 
 
-function github_read_file(username, repository_name, file_path, github_token)
+function github_read_file(username, repository_name, file_path)
     local headers = {}
-    headers['Authorization'] = "token "+github_token
-    url = "https://api.github.com/repos/" + username + "/" + repository_name + "/contents/"+file_path
+    url = "https://raw.githubusercontent.com/"..username.."/"..repository_name.."/master/".. file_path
     r = http.get(url, headers)
     return r
 end
 
-print()
