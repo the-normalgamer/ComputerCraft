@@ -3,13 +3,14 @@ Button = {}
 Button.__index = Button
 
 function Button.new(x, y, width, height, color, text)
+    if height==0 then error("button can't have 0 height") end
     -- Create a new instance
     local self = setmetatable({}, Button)
     -- Default values
     self.x = x or 0
     self.y = y or 0
     self.width = width or 5
-    self.height = height or 3
+    self.height = height-1 or 2
     self.color = color or colors.lightGray
     return self
 end
