@@ -17,17 +17,16 @@ end
 
 function Button:draw()
     -- Draw the button background
-    drawFilledBox(self.x,self.y,self.x+self.width,self.y+self.height)
+    paintutils.drawFilledBox(self.x,self.y,self.x+self.width,self.y+self.height)
     -- Draw text if available
     if self.text then
-        setBackgroundColor(self.color)
+        paintutils.setBackgroundColor(self.color)
         local textX = self.x + math.floor((self.width - #self.text) / 2) -- Center text horizontally
         local textY = self.y + math.floor(self.height / 2) -- Middle row
-        setCursorPosition(textX, textY)
+        paintutils.setCursorPosition(textX, textY)
         write(self.text)
     end
 end
 
 
 return Button
-
