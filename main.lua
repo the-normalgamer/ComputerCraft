@@ -1,4 +1,4 @@
-Button = require("button.lua")
+Button = require("button")
 
 button1 = Button.new()
 
