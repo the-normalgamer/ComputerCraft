@@ -23,7 +23,7 @@ function Button:draw()
         term.setBackgroundColor(self.color)
         local textX = self.x + math.floor((self.width - #self.text) / 2) -- Center text horizontally
         local textY = self.y + math.floor(self.height / 2) -- Middle row
-        paintutils.setCursorPosition(textX, textY)
+        term.setCursorPos(textX, textY)
         write(self.text)
     end
 end
