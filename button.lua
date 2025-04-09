@@ -16,11 +16,11 @@ end
 
 
 function Button:draw()
+    term.setBackgroundColor(self.color)
     -- Draw the button background
     paintutils.drawFilledBox(self.x,self.y,self.x+self.width,self.y+self.height)
     -- Draw text if available
     if self.text then
-        term.setBackgroundColor(self.color)
         local textX = self.x + math.floor((self.width - #self.text) / 2) -- Center text horizontally
         local textY = self.y + math.floor(self.height / 2) -- Middle row
         term.setCursorPos(textX, textY)
