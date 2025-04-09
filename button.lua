@@ -18,6 +18,7 @@ end
 
 function Button:draw()
     term.setBackgroundColor(self.color)
+    if self.width<#self.text then self.width=#self.text end
     -- Draw the button background
     paintutils.drawFilledBox(self.x,self.y,self.x+self.width,self.y+self.height)
     -- Draw text if available
